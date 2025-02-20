@@ -23,5 +23,29 @@ namespace RAD302Week3Lab12025WebAPI.S00243021.Controllers
 
             return _customerRepository.GetAll();
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public Customer Get(int id)
+        {
+            ActivityAPIClient.Track(StudentID: "S00243021", StudentName: "Dmytro Severin", activityName: "Rad302 Week 3 Lab 1", Task: "Testing Get Customer By ID Call");
+
+            return _customerRepository.GetCustomerByID(id);
+        }
+
+        [HttpGet("CheckCustomerCredit/{id}/{amount}")]
+        public bool CheckCustomerCredit(int id, double amount)
+        {
+            ActivityAPIClient.Track(StudentID: "S00243021", StudentName: "Dmytro Severin", activityName: "Rad302 Week 3 Lab 1", Task: "Testing Check Customer Credit Rating Call");
+
+            var customer = _customerRepository.GetCustomerByID(id);
+
+            if (customer == null)
+            {
+                return false;
+            }
+
+            return customer.CreditRating >= amount;
+        }
     }
 }
