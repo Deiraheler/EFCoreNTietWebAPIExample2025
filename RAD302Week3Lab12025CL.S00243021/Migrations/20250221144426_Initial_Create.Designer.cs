@@ -11,8 +11,8 @@ using RAD302Week3Lab12025CL.S00243021;
 namespace RAD302Week3Lab12025CL.S00243021.Migrations
 {
     [DbContext(typeof(CustomerDBContext))]
-    [Migration("20250220160246_Seed Customer Data")]
-    partial class SeedCustomerData
+    [Migration("20250221144426_Initial_Create")]
+    partial class Initial_Create
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

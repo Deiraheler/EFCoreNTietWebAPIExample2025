@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RAD302Week3Lab12025CL.S00243021;
 using Tracker.WebAPIClient;
 
 namespace RAD302Week3Lab12025WebAPI.S00243021.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
@@ -19,7 +21,7 @@ namespace RAD302Week3Lab12025WebAPI.S00243021.Controllers
         [HttpGet]
         public IEnumerable<Customer> Get()
         {
-            ActivityAPIClient.Track(StudentID: "S00243021", StudentName: "Dmytro Severin", activityName: "Rad302 Week 3 Lab 1", Task: "Testing basic controller call");
+            ActivityAPIClient.Track(StudentID: "S00243021", StudentName: "Dmytro Severin", activityName: "Rad302 Week 4 Lab 1", Task: "Testing Authorization");
 
             return _customerRepository.GetAll();
         }
@@ -28,7 +30,7 @@ namespace RAD302Week3Lab12025WebAPI.S00243021.Controllers
         [Route("{id}")]
         public Customer Get(int id)
         {
-            ActivityAPIClient.Track(StudentID: "S00243021", StudentName: "Dmytro Severin", activityName: "Rad302 Week 3 Lab 1", Task: "Testing Get Customer By ID Call");
+            ActivityAPIClient.Track(StudentID: "S00243021", StudentName: "Dmytro Severin", activityName: "Rad302 Week 4 Lab 1", Task: "Testing Get Customer By ID Call");
 
             return _customerRepository.GetCustomerByID(id);
         }

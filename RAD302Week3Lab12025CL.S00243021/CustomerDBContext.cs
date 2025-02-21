@@ -18,9 +18,10 @@ namespace RAD302Week3Lab12025CL.S00243021
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             ActivityAPIClient.Track(StudentID: "s00243021", StudentName: "Dmytro Severin",
-activityName: "Rad302 Week 3 Lab 1", Task: "Creating Customer DB Schema");
+activityName: "Rad302 Week 4 Lab 1", Task: "Creating Customer DB Schema on CLASS");
 
-            var myconnectionstring = "Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog = CustomerCoreDB";
+            //Get connection string from configuration
+            string myconnectionstring = "Server=(localdb)\\mssqllocaldb;Database=CustomerCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
             optionsBuilder.UseSqlServer(myconnectionstring)
                 .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, Microsoft.Extensions.Logging.LogLevel.Information);
         }
@@ -30,8 +31,8 @@ activityName: "Rad302 Week 3 Lab 1", Task: "Creating Customer DB Schema");
             ActivityAPIClient.Track(
                 StudentID: "s00243021",
                 StudentName: "Dmytro Severin",
-                activityName: "Rad302 Week 3 Lab 1",
-                Task: "Seeding Customer Data"
+                activityName: "Rad302 Week 4 Lab 1",
+                Task: "Seeding Customer Data on Class"
             );
 
             modelBuilder.Entity<Customer>().HasData(
