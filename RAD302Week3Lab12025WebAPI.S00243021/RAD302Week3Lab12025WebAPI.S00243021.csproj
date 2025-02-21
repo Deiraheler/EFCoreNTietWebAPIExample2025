@@ -7,12 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.13" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="Tracker" Version="1.0.7-beta" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RAD302Week3Lab12025CL.S00243021\RAD302Week3Lab12025CL.S00243021.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RAD302Week3Lab12025CL.S00243021">
+      <HintPath>..\..\EFCoreNTietWebAPIExample2025JWT\RAD302Week3Lab12025CL.S00243021\obj\Debug\net8.0\RAD302Week3Lab12025CL.S00243021.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
